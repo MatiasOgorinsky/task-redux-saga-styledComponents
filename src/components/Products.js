@@ -18,15 +18,20 @@ const Products = () => {
 
   useEffect(() => {
     dispatch(getProducts());
+    console.log("called");
   }, []);
 
   return (
     <>
       {/* <Card />  */}
       {loading && <p>Loading...</p>}
-      {products.length === 0 && !loading && <p>No users available!</p>}
+      {products.length === 0 && !loading && <p>No products available!</p>}
       {error && !loading && <p>{error}</p>}
-      {products.length > 0 && products.map((product) => <Product key={product.id} product={product} />)}
+      {products.length > 0 &&
+        products.map((product) => (
+          // <Product key={product.id} product={product} />
+          <Card key={product.id} product={product} />
+        ))}
     </>
   );
 };
