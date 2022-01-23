@@ -4,10 +4,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { isSelected } from "../redux/selectors";
 
 const Product = (props) => {
-  const { id, name, inStock } = props.user;
+  const { id, name, inStock } = props.product;
 
   const selected = useSelector((state) => {
-    return isSelected(state, props.user.id);
+    return isSelected(state, id);
   });
 
   const dispatch = useDispatch();
