@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { getProducts } from "../redux/actions/products";
 import { getError, getLoading, getProductsList } from "../redux/selectors";
 import Product from "./Product";
-import Card from "./Card";
 
 // este seria products pq lee la lista
 const Products = () => {
@@ -18,7 +17,6 @@ const Products = () => {
 
   useEffect(() => {
     dispatch(getProducts());
-    console.log("called");
   }, []);
 
   return (
@@ -30,7 +28,7 @@ const Products = () => {
       {products.length > 0 &&
         products.map((product) => (
           // <Product key={product.id} product={product} />
-          <Card key={product.id} product={product} />
+          <Product key={product.id} product={product} />
         ))}
     </>
   );
