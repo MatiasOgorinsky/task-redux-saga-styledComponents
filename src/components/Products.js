@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getProducts } from "../redux/actions/products";
-import { getError, getLoading, getProductsList } from "../redux/selectors";
+import { getError, getLoading, getProductsList, getSelected } from "../redux/selectors";
 import Product from "./Product";
 
 // este seria products pq lee la lista
@@ -11,6 +11,7 @@ const Products = () => {
   const products = useSelector(getProductsList);
   const loading = useSelector(getLoading);
   const error = useSelector(getError);
+  const selected = useSelector(getSelected);
 
   // const loading = useSelector((state) => state.products.loading);
   // const error = useSelector((state) => state.products.error);
@@ -21,15 +22,11 @@ const Products = () => {
 
   return (
     <>
-      {/* <Card />  */}
       {loading && <p>Loading...</p>}
       {products.length === 0 && !loading && <p>No products available!</p>}
       {error && !loading && <p>{error}</p>}
-      {products.length > 0 &&
-        products.map((product) => (
-          // <Product key={product.id} product={product} />
-          <Product key={product.id} product={product} />
-        ))}
+      {products.length > 0 && products.map((product) => <Product key={product.id} product={product} />)}
+      <p>{selected.length}</p>
     </>
   );
 };

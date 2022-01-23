@@ -2,7 +2,8 @@ import { createSelector } from "reselect";
 
 const getState = (state) => state.products || {};
 
-const getSelected = createSelector(getState, (products) => products.selected || []);
+export const getSelected = createSelector(getState, (products) => products.selected || []);
+// este es el que tengo que usar
 const getId = (_, id) => id;
 
 export const isSelected = createSelector([getSelected, getId], (state, id) => {
