@@ -4,7 +4,6 @@ import { getProducts } from "../redux/actions/products";
 import { getError, getLoading, getProductsList, getSelected } from "../redux/selectors";
 import Product from "./Product";
 
-// este seria products pq lee la lista
 const Products = () => {
   const dispatch = useDispatch();
 
