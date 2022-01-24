@@ -6,15 +6,10 @@ import Product from "./Product";
 
 const Products = () => {
   const dispatch = useDispatch();
-
   const products = useSelector(getProductsList);
   const loading = useSelector(getLoading);
   const error = useSelector(getError);
   const selected = useSelector(getSelected);
-
-  // const loading = useSelector((state) => state.products.loading);
-  // const error = useSelector((state) => state.products.error);
-
   useEffect(() => {
     dispatch(getProducts());
   }, []);
