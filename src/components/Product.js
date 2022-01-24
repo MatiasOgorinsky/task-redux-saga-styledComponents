@@ -16,7 +16,9 @@ const Container = styled.div`
   width: 40%;
   margin-top: 15px;
 `;
-
+const ButtonContainer = styled.div`
+  margin-bottom: 15px;
+`;
 const Description = styled.p`
   color: red;
 `;
@@ -57,10 +59,10 @@ const Product = (props) => {
     <Container>
       <Title>{name}</Title>
       <Description> {selected ? "product selected" : "product not selected"}</Description>
-      <div style={{ marginBottom: "15px" }}>
+      <ButtonContainer>
         <ActionButton onClick={select}>Select</ActionButton>
         <ActionButton onClick={unselect}>Unselect</ActionButton>
-      </div>
+      </ButtonContainer>
     </Container>
   );
 };
