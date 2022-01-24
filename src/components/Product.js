@@ -56,7 +56,7 @@ const Product = (props) => {
   return (
     <Container>
       <Title>{name}</Title>
-      <Description> {selected ? "is selected" : "is not selected"}</Description>
+      <Description> {selected ? "product selected" : "product not selected"}</Description>
       <div style={{ marginBottom: "15px" }}>
         <ActionButton onClick={select}>Select</ActionButton>
         <ActionButton onClick={unselect}>Unselect</ActionButton>
