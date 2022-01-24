@@ -17,5 +17,5 @@ const map = arr.reduce((next, element) => {
   return { ...next, [element.id]: element };
 }, {});
 
-document.getElementById("originalArray").innerHTML = JSON.stringify(arr, null, 4);
-document.getElementById("array").innerHTML = JSON.stringify(map, null, 4);
+document.getElementById("originalArray").innerHTML = JSON.stringify(arr);
+document.getElementById("array").innerHTML = JSON.stringify(map);
